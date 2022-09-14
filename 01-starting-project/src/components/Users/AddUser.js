@@ -11,14 +11,14 @@ const AddUser = (props) => {
     event.preventDefault();
     // validation
     if (enteredUsername.trim() === 0 || enteredAge.trim() === 0) {
-        /// return stops from following code execusion 
-        return;
+      /// return stops from following code execusion
+      return;
     }
     // plus enforces conversion from string to a number
     if (+enteredAge < 1) {
-        return;
+      return;
     }
-    console.log(enteredAge, enteredUsername);
+    props.onAddUser(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnteredAge("");
   };
